@@ -1,0 +1,17 @@
+
+@import url('http://fonts.googleapis.com/css?family=Open+Sans:400,600,700');
+
+*, *:before, *:after {margin: 0; padding: 0; box-sizing: border-box;}
+body {background: #2F2556; color: #B9B5C7; font: 14px 'Open Sans', sans-serif;}
+
+.top { padding-right: 20px; background: #261F41; text-align: right; }
+a { color: rgba(255,255,255,0.6); text-transform: uppercase; text-decoration: none; line-height: 42px; }
+
+h1 {padding: 50px 0; font-weight: 400; text-align: center;}
+		
+.main {margin: 0 auto; max-width: 500px;}
+.main .quizsection {margin-bottom: 20px;}
+
+table{
+	border: 4px double red;
+}
