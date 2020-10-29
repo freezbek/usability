@@ -8,12 +8,20 @@ $name = $_POST['user_name'];
 $phone = $_POST['user_phone'];
 $email = $_POST['user_email'];
 //$mail->SMTPDebug = 3;                               // Enable verbose debug output
-if(filter_var($name,FILTER_SANITIZE_STRING)!="" ||
-	filter_var($phone,FILTER_VALIDATE_INT)!=false || filter_var($email,FILTER_VALIDATE_EMAIL)!="")
+if(strlen($name)<3 )
 {
  echo "Правильно оформите обязательные поля";
 }
-else {
+/*
+elseif(!filter_var($email,FILTER_VALIDATE_EMAIL)) {
+ 	echo "Правильно оформите обязательные поля";
+ }
+ */
+elseif (filter_var($phone,FILTER_VALIDATE_INT)!=true) {
+ 	echo "Правильно оформите обязательные поля";
+ } 
+ 
+ else{
 
 
 
