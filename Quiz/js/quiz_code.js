@@ -81,6 +81,7 @@ window.onload = function () {
     function showResult() {
         let key = Object.keys(result).reduce(function (a, b) { return result[a] > result[b] ? a : b });
 
+
         let div = document.createElement('div');
         div.classList.add('result');
         div.innerHTML = answers[key]['description'];
@@ -95,6 +96,28 @@ window.onload = function () {
         reloadButton.innerHTML = 'New quiz';
         reloadButton.classList.add('reload-button');
         document.querySelector('main').appendChild(reloadButton);
+
+
+        //график
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var chart = new Chart(ctx, {
+            // The type of chart we want to create
+            type: 'bar',
+
+            // The data for our dataset
+            data: {
+                labels: ['a', 'b','c','d',],
+                datasets: [{
+                    label: 'Вторая методика',
+                    backgroundColor: rgb(255,99,132),
+                    borderColor: rgb(255, 99, 132),
+                    data: [second_metodic_a,second_metodic_b,second_metodic_c,second_metodic_d]
+                }]
+            },
+
+            // Configuration options go here
+            options: {}
+        });
     }
     showQuestion();
 }
