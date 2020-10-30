@@ -54,24 +54,24 @@ window.onload = function () {
         if (step > 20 && step <= 40) {
             h_1.textContent = 'Методика 2. «Изучение статусов профессиональной идентичности»';
             h_2.textContent = '';
-             if (event.target.dataset.v == "w") {second_metodic_a++;}
-            if (event.target.dataset.v == 't') {second_metodic_b++;}
-             if (event.target.dataset.v == 'c') {second_metodic_c++;}
-              if (event.target.dataset.v == 's') {second_metodic_d++;}
+             if (event.target.dataset.v == "_a") {second_metodic_a++;}
+            if (event.target.dataset.v == '_b') {second_metodic_b++;}
+             if (event.target.dataset.v == '_c') {second_metodic_c++;}
+              if (event.target.dataset.v == '_d') {second_metodic_d++;}
         }
         if (step > 40 && step <= 80) {
             h_1.textContent = 'Методика 3.  «Большая пятерка личностных качеств»';
             h_2.textContent = '';
-            if (event.target.dataset.v == 'w') {third_metodic_a++;}
-            if (event.target.dataset.v == 't') {third_metodic_b++;}
-             if (event.target.dataset.v == 'c') {third_metodic_c++;}
+            if (event.target.dataset.v == '_a') {third_metodic_a++;}
+            if (event.target.dataset.v == '_b') {third_metodic_b++;}
+             if (event.target.dataset.v == '_c') {third_metodic_c++;}
         }
         if (step > 80 && step <=121) {
             h_1.textContent = 'Методика 4. «Мотивация выбора профессии» ';
             h_2.textContent = '';
-            if (event.target.dataset.v == 'w') {fourth_metodic_a++;}
-            if (event.target.dataset.v == 't') {fourth_metodic_b++;}
-             if (event.target.dataset.v == 'c') {fourth_metodic_c++;}
+            if (event.target.dataset.v == '_a') {fourth_metodic_a++;}
+            if (event.target.dataset.v == '_b') {fourth_metodic_b++;}
+             if (event.target.dataset.v == '_c') {fourth_metodic_c++;}
         }
         console.log(second_metodic_a,second_metodic_b,second_metodic_c,second_metodic_d,"второй метод");
         console.log(third_metodic_a,third_metodic_c,third_metodic_b,third_metodic_c,"третий метод");
