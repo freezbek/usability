@@ -32,6 +32,8 @@ window.onload = function () {
         event.stopPropagation();
         if (event.target.classList.contains('answer-variant') && step < quiz.length) {
 
+
+
             if (result[event.target.dataset.v] != undefined) {
                 result[event.target.dataset.v]++;
             } else {

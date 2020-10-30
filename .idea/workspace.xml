@@ -20,7 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="86475c41-534a-461a-a21f-0bfe935e4a7b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Quiz/Key.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Quiz/js/quiz_key.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Quiz/js/quiz_code.js" beforeDir="false" afterPath="$PROJECT_DIR$/Quiz/js/quiz_code.js" afterDir="false" />
     </list>
@@ -33,6 +33,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="package.json" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -52,6 +53,11 @@
     <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
+  <component name="RunManager">
+    <configuration name="quiz_key.js" type="NodeJSConfigurationType" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/Quiz/js/quiz_key.js" working-dir="$PROJECT_DIR$/Quiz/js">
+      <method v="2" />
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -62,7 +68,7 @@
       <updated>1603991771851</updated>
       <workItem from="1603991777223" duration="11420000" />
       <workItem from="1604014496825" duration="936000" />
-      <workItem from="1604071967245" duration="13945000" />
+      <workItem from="1604071967245" duration="19284000" />
     </task>
     <servers />
   </component>
