@@ -32,14 +32,13 @@ window.onload = function () {
         event.stopPropagation();
         if (event.target.classList.contains('answer-variant') && step < quiz.length) {
 
-
-
             if (result[event.target.dataset.v] != undefined) {
                 result[event.target.dataset.v]++;
             } else {
                 result[event.target.dataset.v] = 0;
             }
             step++;
+
             if (step === quiz.length) {
                 document.querySelector('.question').remove();
                 document.querySelector('.answer').remove();
@@ -72,6 +71,9 @@ window.onload = function () {
                 second_d++;
             }
         }
+        //   if (step === 40)
+        //      showResult();
+
         if (step >= 40 && step < 80) {
             testChapter.textContent = test_chapter_name[3];
             //question.textContent = '';
@@ -125,60 +127,99 @@ window.onload = function () {
         document.querySelector('main').appendChild(reloadButton);
 
 
-        //график
+        //графики
 
-        var chartOptions = {
-            scales: {
-                yAxes: [{
-                    barPercentage: 0.5,
-                    gridLines: {
-                        display: false
-                    }
-                }],
-                xAxes: [{
-                    gridLines: {
-                        zeroLineColor: "black",
-                        zeroLineWidth: 2
-                    },
-                    ticks: {
-                        min: 0,
-                        max: 6500,
-                        stepSize: 1
-                    },
-                    scaleLabel: {
-                        display: true,
-                        labelString: "Density in kg/m3"
-                    }
+
+        var second_chapter = document.getElementById('second_chapter').getContext('2d');
+        let blue = 'rgba(54, 162, 235, 1)';
+        var second_method = new Chart(second_chapter, {
+            type: 'horizontalBar',
+            data: {
+                labels: ['Навязанная', 'Мараторий', 'Сформированная', 'Неопределённая'],
+                datasets: [{
+                    label: 'Статус профессиональный идентичности',
+                    data: [second_a, second_b, second_c, second_d],
+                    backgroundColor: blue,
+                    /*
+                    borderColor: [
+                        blue,
+                        blue,
+                        blue,
+                        blue
+                    ],
+                    */
+                    borderWidth: 1
                 }]
             },
-            elements: {
-                rectangle: {
-                    borderSkipped: 'left',
+            options: {
+                scales: {
+                    xAxes: [{
+                        stacked: true
+                    }],
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        },
+                        stacked: true
+                    }]
                 }
             }
-        };
+        })
 
 
-        var ctx = document.getElementById('myChart').getContext('2d');
-        var chart = new Chart(ctx, {
-            // The type of chart we want to create
-            type: 'bar',
-
-            // The data for our dataset
+        var third_chapter = document.getElementById('third_chapter').getContext('2d');
+        var chapter_3 = new Chart(third_chapter, {
+            type: 'horizontalBar',
             data: {
-                labels: ['a', 'b', 'c', 'd',],
+                labels: ['Доброжелательность', 'Сознательность', 'Открытость', 'Нейротизм', 'Экстраверсия'],
                 datasets: [{
-                    label: 'Вторая методика',
-                    backgroundColor: 'rgb(255, 99, 132)',
-                    borderColor: 'rgb(255, 99, 132)',
-                    data: [second_a, second_b, second_c, second_d]
+                    //        label: 'Статус профессиональный идентичности',
+                    data: [third_a, third_b, third_c, 4, 5], // change 4,5
+                    backgroundColor: blue, //[blue,blue,red,green] to color every label
+                    borderWidth: 1
                 }]
             },
-
-            // Configuration options go here
-            options: {}
+            options: {
+                scales: {
+                    xAxes: [{
+                        stacked: true
+                    }],
+                    yAxes: [{
+                        stacked: true
+                    }]
+                }
+            }
         });
+
+        var fourth_chapter = document.getElementById('fourth_chapter').getContext('2d');
+        var chapter_4 = new Chart(fourth_chapter, {
+            type: 'horizontalBar',
+            data: {
+                labels: ['Внешняя', 'Учебная', 'Социальная', 'Статусная', 'Прагматичная', 'Коммуникативная', 'Профессиональная'],
+                datasets: [{
+                    //     label: 'Статус профессиональный идентичности',
+                    data: [fourth_a, fourth_b, fourth_c, 8, 6, 6, 7], // change 4,5
+                    backgroundColor: blue,
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    xAxes: [{
+                        stacked: true
+                    }],
+                    yAxes: [{
+                        //      ticks: {
+                        //        // beginAtZero: true
+                        //     }
+                        stacked: true
+                    }]
+                }
+            }
+        });
+
         console.log(key);
+
     }
 
     showQuestion();
