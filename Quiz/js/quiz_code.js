@@ -6,11 +6,14 @@ window.onload = function () {
     var question = document.getElementsByTagName('h3');
 
     let second_a = 0, second_b = 0, second_c = 0, second_d = 0;
-    let third_a = 0, third_b = 0, third_c = 0;
 
 
-    let fourth_a = 0, fourth_b = 0, fourth_c = 0;
+    //chapter_3
+    let kindness = 0, consciousness = 0, openness = 0,
+        neuroticism = 0, extroversion = 0;
 
+
+    //chapter_4
     let external = 0, educational = 0, social = 0, status = 0,
         pragmatical = 0, communicate = 0, self_professional = 0;
 
@@ -22,7 +25,7 @@ window.onload = function () {
     testName.innerText = 'Дистанционное тестирование по теме «Карьерный потенциал»';
 
     let result = {};
-    let step = 79;
+    let step = 0;
 
     function showQuestion(questionNumber) {
         document.querySelector('.question').innerHTML = quiz[step]['q'];
@@ -33,7 +36,16 @@ window.onload = function () {
         document.querySelector('.answer').innerHTML = answer;
     }
 
+
     document.onclick = function (event) {
+
+
+        if (event.target.dataset.v == undefined && step != quiz.length)
+            return showQuestion();
+        else if (step == quiz.length)
+            return;
+
+
         event.stopPropagation();
         if (event.target.classList.contains('answer-variant') && step < quiz.length) {
 
@@ -42,17 +54,8 @@ window.onload = function () {
             } else {
                 result[event.target.dataset.v] = 0;
             }
-            step++;
 
-            if (step === quiz.length) {
-                document.querySelector('.question').remove();
-                document.querySelector('.answer').remove();
-                testChapter.remove();
-                testName.remove();
-                showResult();
-            } else {
-                showQuestion();
-            }
+
         }
         if (event.target.classList.contains('reload-button')) {
             location.reload(result[event.target.dataset.v]);
@@ -63,105 +66,146 @@ window.onload = function () {
         if (step >= 20 && step < 40) {
             testChapter.textContent = test_chapter_name[2];
             question.textContent = '';
-            if (event.target.dataset.v == "_a") {
+            if (event.target.dataset.v === "_a") {
                 second_a++;
             }
-            if (event.target.dataset.v == '_b') {
+            if (event.target.dataset.v === '_b') {
                 second_b++;
             }
-            if (event.target.dataset.v == '_c') {
+            if (event.target.dataset.v === '_c') {
                 second_c++;
             }
-            if (event.target.dataset.v == '_d') {
+            if (event.target.dataset.v === '_d') {
                 second_d++;
             }
         }
-        //   if (step === 40)
-        //      showResult();
 
         if (step >= 40 && step < 80) {
             testChapter.textContent = test_chapter_name[3];
-            //question.textContent = '';
-            if (event.target.dataset.v == '_a') {
-                third_a++;
-            }
-            if (event.target.dataset.v == '_b') {
-                third_b++;
-            }
-            if (event.target.dataset.v == '_c') {
-                third_c++;
+            var q_3 = step - 40;
+            //a: +=0
+            //b: +=1
+            //c: +=2
+            //kindness = 0, consciousness = 0, openness = 0, neuroticism = 0, extroversion = 0;
+            let shit_happen = event.target.dataset.v;
+
+            if (event.target.dataset.v === '_a') {
+
+
+            } else if (event.target.dataset.v === '_b') {
+                console.log("q_3 dataset expected: _b   dataset actual: ", event.target.dataset.v)
+                //console.log(kindness)
+                if (q_3 === 0 || q_3 === 5 || q_3 === 10 || q_3 === 15 || q_3 === 20 || q_3 === 25 || q_3 === 30 || q_3 === 35) {
+                    kindness += 1;
+                    console.log(kindness)
+                } else if (q_3 === 1 || q_3 === 6 || q_3 === 11 || q_3 === 16 || q_3 === 21 || q_3 === 26 || q_3 === 31 || q_3 === 36)
+                    consciousness += 1;
+                else if (q_3 === 2 || q_3 === 7 || q_3 === 12 || q_3 === 17 || q_3 === 22 || q_3 === 27 || q_3 === 32 || q_3 === 37)
+                    openness += 1;
+                else if (q_3 === 3 || q_3 === 8 || q_3 === 13 || q_3 === 18 || q_3 === 23 || q_3 === 28 || q_3 === 33 || q_3 === 38)
+                    neuroticism += 1;
+                else if (q_3 === 4 || q_3 === 9 || q_3 === 14 || q_3 === 19 || q_3 === 24 || q_3 === 29 || q_3 === 34 || q_3 === 39)
+                    extroversion += 1;
+
+
+            } else if (event.target.dataset.v === '_c') {
+                console.log("q_3 dataset expected: _c   dataset actual: ", event.target.dataset.v)
+
+                if (q_3 === 0 || q_3 === 5 || q_3 === 10 || q_3 === 15 || q_3 === 20 || q_3 === 25 || q_3 === 30 || q_3 === 35) {
+                    //console.log("WHATAHELL ARE YOU 2 DOING?")
+                    kindness += 2;
+                } else if (q_3 === 1 || q_3 === 6 || q_3 === 11 || q_3 === 16 || q_3 === 21 || q_3 === 26 || q_3 === 31 || q_3 === 36)
+                    consciousness += 2;
+                else if (q_3 === 2 || q_3 === 7 || q_3 === 12 || q_3 === 17 || q_3 === 22 || q_3 === 27 || q_3 === 32 || q_3 === 37)
+                    openness += 2;
+                else if (q_3 === 3 || q_3 === 8 || q_3 === 13 || q_3 === 18 || q_3 === 23 || q_3 === 28 || q_3 === 33 || q_3 === 38)
+                    neuroticism += 2;
+                else if (q_3 === 4 || q_3 === 9 || q_3 === 14 || q_3 === 19 || q_3 === 24 || q_3 === 29 || q_3 === 34 || q_3 === 39)
+                    extroversion += 2;
+
+
+            } else if (shit_happen !== '_a' && shit_happen !== '_b' && shit_happen !== '_c') {
+                console.log("shit happend, event.target: ", shit_happen);
             }
         }
 
         if (step >= 80 && step < 101) {
             testChapter.textContent = test_chapter_name[4];
             //question.textContent = '';
-            var question = step - 80;
-            if (event.target.dataset.v == '_a') {
+            var question_4 = step - 80;
+            if (event.target.dataset.v === '_a') {
                 //govnokod arrives
-                if (question === 0 || question === 7 || question === 14)
+                if (question_4 === 0 || question_4 === 7 || question_4 === 14)
                     self_professional += 3;
-                else if (question === 1 || question === 8 || question === 15)
+                else if (question_4 === 1 || question_4 === 8 || question_4 === 15)
                     communicate += 3;
-                else if (question === 2 || question === 9 || question === 16)
+                else if (question_4 === 2 || question_4 === 9 || question_4 === 16)
                     pragmatical += 3;
-                else if (question === 3 || question === 10 || question === 17)
+                else if (question_4 === 3 || question_4 === 10 || question_4 === 17)
                     status += 3;
-                else if (question === 4 || question === 11 || question === 18)
+                else if (question_4 === 4 || question_4 === 11 || question_4 === 18)
                     social += 3;
-                else if (question === 5 || question === 12 || question === 19)
+                else if (question_4 === 5 || question_4 === 12 || question_4 === 19)
                     educational += 3;
-                else if (question === 6 || question === 13 || question === 20)
+                else if (question_4 === 6 || question_4 === 13 || question_4 === 20)
                     external += 3;
 
 
             }
-            if (event.target.dataset.v == '_b') {
+            if (event.target.dataset.v === '_b') {
 
                 //govnokod arrives
 
-
-                if (question === 0 || question === 7 || question === 14)
+                if (question_4 === 0 || question_4 === 7 || question_4 === 14)
                     self_professional += 2;
-                else if (question === 1 || question === 8 || question === 15)
+                else if (question_4 === 1 || question_4 === 8 || question_4 === 15)
                     communicate += 2;
-                else if (question === 2 || question === 9 || question === 16)
+                else if (question_4 === 2 || question_4 === 9 || question_4 === 16)
                     pragmatical += 2;
-                else if (question === 3 || question === 10 || question === 17)
+                else if (question_4 === 3 || question_4 === 10 || question_4 === 17)
                     status += 2;
-                else if (question === 4 || question === 11 || question === 18)
+                else if (question_4 === 4 || question_4 === 11 || question_4 === 18)
                     social += 2;
-                else if (question === 5 || question === 12 || question === 19)
+                else if (question_4 === 5 || question_4 === 12 || question_4 === 19)
                     educational += 2;
-                else if (question === 6 || question === 13 || question === 20)
+                else if (question_4 === 6 || question_4 === 13 || question_4 === 20)
                     external += 2;
 
 
             }
-            if (event.target.dataset.v == '_c') {
+            if (event.target.dataset.v === '_c') {
                 //govnokod arrives
 
-                if (question === 0 || question === 7 || question === 14)
+                if (question_4 === 0 || question_4 === 7 || question_4 === 14)
                     self_professional += 1;
-                else if (question === 1 || question === 8 || question === 15)
+                else if (question_4 === 1 || question_4 === 8 || question_4 === 15)
                     communicate += 1;
-                else if (question === 2 || question === 9 || question === 16)
+                else if (question_4 === 2 || question_4 === 9 || question_4 === 16)
                     pragmatical += 1;
-                else if (question === 3 || question === 10 || question === 17)
+                else if (question_4 === 3 || question_4 === 10 || question_4 === 17)
                     status += 1;
-                else if (question === 4 || question === 11 || question === 18)
+                else if (question_4 === 4 || question_4 === 11 || question_4 === 18)
                     social += 1;
-                else if (question === 5 || question === 12 || question === 19)
+                else if (question_4 === 5 || question_4 === 12 || question_4 === 19)
                     educational += 1;
-                else if (question === 6 || question === 13 || question === 20)
+                else if (question_4 === 6 || question_4 === 13 || question_4 === 20)
                     external += 1;
 
 
             }
         }
-        //console.log(second_a, second_b, second_c, second_d, "второй метод");
-        //console.log(third_a, third_c, third_b, third_c, "третий метод");
-        console.log(self_professional, "четвёртый метод");
+
+        step++;
+        if (step === quiz.length) {
+            document.querySelector('.question').remove();
+            document.querySelector('.answer').remove();
+            testChapter.remove();
+            testName.remove();
+            showResult();
+        } else {
+            showQuestion();
+        }
+
     }
 
     function showResult() {
@@ -233,7 +277,7 @@ window.onload = function () {
                 labels: ['Доброжелательность', 'Сознательность', 'Открытость', 'Нейротизм', 'Экстраверсия'],
                 datasets: [{
                     //        label: 'Статус профессиональный идентичности',
-                    data: [third_a, third_b, third_c, 4, 5], // change 4,5
+                    data: [kindness, consciousness, openness, neuroticism, extroversion],
                     backgroundColor: blue, //[blue,blue,red,green] to color every label
                     borderWidth: 1
                 }]
@@ -241,7 +285,10 @@ window.onload = function () {
             options: {
                 scales: {
                     xAxes: [{
-                        stacked: true
+                        stacked: true,
+                        ticks: {
+                            beginAtZero: true
+                        },
                     }],
                     yAxes: [{
                         stacked: true
