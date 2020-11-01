@@ -7,7 +7,12 @@ window.onload = function () {
 
     let second_a = 0, second_b = 0, second_c = 0, second_d = 0;
     let third_a = 0, third_b = 0, third_c = 0;
+
+
     let fourth_a = 0, fourth_b = 0, fourth_c = 0;
+
+    let external = 0, educational = 0, social = 0, status = 0,
+        pragmatical = 0, communicate = 0, self_professional = 0;
 
     testChapter = testChapter[0];
     testChapter.innerText = test_chapter_name[1];
@@ -17,7 +22,7 @@ window.onload = function () {
     testName.innerText = 'Дистанционное тестирование по теме «Карьерный потенциал»';
 
     let result = {};
-    let step = 0;
+    let step = 79;
 
     function showQuestion(questionNumber) {
         document.querySelector('.question').innerHTML = quiz[step]['q'];
@@ -87,22 +92,76 @@ window.onload = function () {
                 third_c++;
             }
         }
+
         if (step >= 80 && step < 101) {
             testChapter.textContent = test_chapter_name[4];
             //question.textContent = '';
+            var question = step - 80;
             if (event.target.dataset.v == '_a') {
-                fourth_a++;
+                //govnokod arrives
+                if (question === 0 || question === 7 || question === 14)
+                    self_professional += 3;
+                else if (question === 1 || question === 8 || question === 15)
+                    communicate += 3;
+                else if (question === 2 || question === 9 || question === 16)
+                    pragmatical += 3;
+                else if (question === 3 || question === 10 || question === 17)
+                    status += 3;
+                else if (question === 4 || question === 11 || question === 18)
+                    social += 3;
+                else if (question === 5 || question === 12 || question === 19)
+                    educational += 3;
+                else if (question === 6 || question === 13 || question === 20)
+                    external += 3;
+
+
             }
             if (event.target.dataset.v == '_b') {
-                fourth_b++;
+
+                //govnokod arrives
+
+
+                if (question === 0 || question === 7 || question === 14)
+                    self_professional += 2;
+                else if (question === 1 || question === 8 || question === 15)
+                    communicate += 2;
+                else if (question === 2 || question === 9 || question === 16)
+                    pragmatical += 2;
+                else if (question === 3 || question === 10 || question === 17)
+                    status += 2;
+                else if (question === 4 || question === 11 || question === 18)
+                    social += 2;
+                else if (question === 5 || question === 12 || question === 19)
+                    educational += 2;
+                else if (question === 6 || question === 13 || question === 20)
+                    external += 2;
+
+
             }
             if (event.target.dataset.v == '_c') {
-                fourth_c++;
+                //govnokod arrives
+
+                if (question === 0 || question === 7 || question === 14)
+                    self_professional += 1;
+                else if (question === 1 || question === 8 || question === 15)
+                    communicate += 1;
+                else if (question === 2 || question === 9 || question === 16)
+                    pragmatical += 1;
+                else if (question === 3 || question === 10 || question === 17)
+                    status += 1;
+                else if (question === 4 || question === 11 || question === 18)
+                    social += 1;
+                else if (question === 5 || question === 12 || question === 19)
+                    educational += 1;
+                else if (question === 6 || question === 13 || question === 20)
+                    external += 1;
+
+
             }
         }
-        console.log(second_a, second_b, second_c, second_d, "второй метод");
-        console.log(third_a, third_c, third_b, third_c, "третий метод");
-        console.log(fourth_a, fourth_b, fourth_c, "четвёртый метод");
+        //console.log(second_a, second_b, second_c, second_d, "второй метод");
+        //console.log(third_a, third_c, third_b, third_c, "третий метод");
+        console.log(self_professional, "четвёртый метод");
     }
 
     function showResult() {
@@ -198,7 +257,7 @@ window.onload = function () {
                 labels: ['Внешняя', 'Учебная', 'Социальная', 'Статусная', 'Прагматичная', 'Коммуникативная', 'Профессиональная'],
                 datasets: [{
                     //     label: 'Статус профессиональный идентичности',
-                    data: [fourth_a, fourth_b, fourth_c, 8, 6, 6, 7], // change 4,5
+                    data: [external, educational, social, status, pragmatical, communicate, self_professional],
                     backgroundColor: blue,
                     borderWidth: 1
                 }]
@@ -209,9 +268,9 @@ window.onload = function () {
                         stacked: true
                     }],
                     yAxes: [{
-                        //      ticks: {
-                        //        // beginAtZero: true
-                        //     }
+                        ticks: {
+                            beginAtZero: true
+                        },
                         stacked: true
                     }]
                 }
