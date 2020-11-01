@@ -87,7 +87,7 @@ window.onload = function () {
                 third_c++;
             }
         }
-        if (step >= 80 && step <= 121) {
+        if (step >= 80 && step < 101) {
             testChapter.textContent = test_chapter_name[4];
             //question.textContent = '';
             if (event.target.dataset.v == '_a') {
@@ -131,7 +131,7 @@ window.onload = function () {
 
 
         var second_chapter = document.getElementById('second_chapter').getContext('2d');
-        let blue = 'rgba(54, 162, 235, 1)';
+        let blue = 'rgb(57,156,215,1)';
         var second_method = new Chart(second_chapter, {
             type: 'horizontalBar',
             data: {
