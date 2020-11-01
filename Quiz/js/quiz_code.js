@@ -5,7 +5,9 @@ window.onload = function () {
     var testChapter = document.getElementsByTagName('h2');
     var question = document.getElementsByTagName('h3');
 
-    let second_a = 0, second_b = 0, second_c = 0, second_d = 0;
+
+    //chapter_2
+    let _undefined = 0, imposed = 0, moratorium = 0, formed = 0;
 
 
     //chapter_3
@@ -54,30 +56,285 @@ window.onload = function () {
             } else {
                 result[event.target.dataset.v] = 0;
             }
-
-
         }
-        if (event.target.classList.contains('reload-button')) {
-            location.reload(result[event.target.dataset.v]);
-        }
+        
+
         if (step >= 10 && step < 20) {
             question.textContent = '2. Чем бы Вы хотели заниматься? Какой вид деятельности Вас привлекает?';
         }
         if (step >= 20 && step < 40) {
             testChapter.textContent = test_chapter_name[2];
             question.textContent = '';
-            if (event.target.dataset.v === "_a") {
-                second_a++;
+            let question_2 = step - 20;
+            let answer_2 = event.target.dataset.v;
+
+            if (question_2 === 0) {
+                if (answer_2 === '_a')
+                    _undefined += 2;
+                else if (answer_2 === '_b')
+                    imposed++;
+                else if (answer_2 === '_d')
+                    moratorium++;
+                else if (answer_2 === '_c')
+                    formed++;
+                else
+                    console.log("line 84 wrong answer reached");
             }
-            if (event.target.dataset.v === '_b') {
-                second_b++;
+
+            if (question_2 === 1) {
+                if (answer_2 === '_d')
+                    _undefined++;
+                else if (answer_2 === '_b')
+                    imposed++;
+                else if (answer_2 === '_a')
+                    moratorium += 2;
+                else if (answer_2 === '_c')
+                    formed++;
+                else
+                    console.log("line 97 wrong answer reached");
             }
-            if (event.target.dataset.v === '_c') {
-                second_c++;
+
+            if (question_2 === 2) {
+                if (answer_2 === '_c')
+                    _undefined++;
+                else if (answer_2 === '_b')
+                    imposed++;
+                else if (answer_2 === '_a')
+                    moratorium += 2;
+                else if (answer_2 === '_d')
+                    formed++;
+                else
+                    console.log("line 110 wrong answer reached");
             }
-            if (event.target.dataset.v === '_d') {
-                second_d++;
+
+
+            if (question_2 === 3) {
+                if (answer_2 === '_c')
+                    _undefined++;
+                else if (answer_2 === '_a')
+                    imposed += 2;
+                else if (answer_2 === '_b')
+                    moratorium++;
+                else if (answer_2 === '_d')
+                    formed++;
+                else
+                    console.log("line 124 wrong answer reached");
             }
+
+            if (question_2 === 4) {
+                if (answer_2 === '_c')
+                    _undefined++;
+                else if (answer_2 === '_a')
+                    imposed += 2;
+                else if (answer_2 === '_b')
+                    moratorium++;
+                else if (answer_2 === '_d')
+                    formed++;
+                else
+                    console.log("line 137 wrong answer reached");
+            }
+
+
+            if (question_2 === 5) {
+                if (answer_2 === '_c')
+                    _undefined++;
+                else if (answer_2 === '_a')
+                    imposed++;
+                else if (answer_2 === '_d')
+                    moratorium++;
+                else if (answer_2 === '_b')
+                    formed += 2;
+                else
+                    console.log("line 151 wrong answer reached");
+            }
+
+
+            if (question_2 === 6) {
+                if (answer_2 === '_a')
+                    _undefined++;
+                else if (answer_2 === '_b')
+                    imposed += 2;
+                else if (answer_2 === '_c')
+                    moratorium++;
+                else if (answer_2 === '_d')
+                    formed++;
+                else
+                    console.log("line 165 wrong answer reached");
+            }
+
+
+            if (question_2 === 7) {
+                if (answer_2 === '_b')
+                    _undefined += 2;
+                else if (answer_2 === '_a')
+                    imposed++;
+                else if (answer_2 === '_c')
+                    moratorium++;
+                else if (answer_2 === '_d')
+                    formed++;
+                else
+                    console.log("line 179 wrong answer reached");
+            }
+
+
+            if (question_2 === 8) {
+                if (answer_2 === '_a')
+                    _undefined++;
+                else if (answer_2 === '_c')
+                    imposed++;
+                else if (answer_2 === '_d')
+                    moratorium++;
+                else if (answer_2 === '_b')
+                    formed += 2;
+                else
+                    console.log("line 193 wrong answer reached");
+            }
+
+            if (question_2 === 9) {
+                if (answer_2 === '_c')
+                    _undefined++;
+                else if (answer_2 === '_b')
+                    imposed += 2;
+                else if (answer_2 === '_a')
+                    moratorium++;
+                else if (answer_2 === '_d')
+                    formed++;
+                else
+                    console.log("line 206 wrong answer reached");
+            }
+
+            if (question_2 === 10) {
+                if (answer_2 === '_c')
+                    _undefined += 2;
+                else if (answer_2 === '_b')
+                    imposed++;
+                else if (answer_2 === '_d')
+                    moratorium++;
+                else if (answer_2 === '_a')
+                    formed++;
+                else
+                    console.log("line 219 wrong answer reached");
+            }
+
+            if (question_2 === 11) {
+                if (answer_2 === '_b')
+                    _undefined++;
+                else if (answer_2 === '_c')
+                    imposed += 2;
+                else if (answer_2 === '_a')
+                    moratorium++;
+                else if (answer_2 === '_d')
+                    formed++;
+                else
+                    console.log("line 232 wrong answer reached");
+            }
+
+            if (question_2 === 12) {
+                if (answer_2 === '_c')
+                    _undefined += 2;
+                else if (answer_2 === '_b')
+                    imposed++;
+                else if (answer_2 === '_a')
+                    moratorium++;
+                else if (answer_2 === '_d')
+                    formed++;
+                else
+                    console.log("line 245 wrong answer reached");
+            }
+
+            if (question_2 === 13) {
+                if (answer_2 === '_d')
+                    _undefined++;
+                else if (answer_2 === '_a')
+                    imposed++;
+                else if (answer_2 === '_c')
+                    moratorium += 2;
+                else if (answer_2 === '_b')
+                    formed++;
+                else
+                    console.log("line 258 wrong answer reached");
+            }
+
+            if (question_2 === 14) {
+                if (answer_2 === '_b')
+                    _undefined++;
+                else if (answer_2 === '_a')
+                    imposed++;
+                else if (answer_2 === '_d')
+                    moratorium++;
+                else if (answer_2 === '_c')
+                    formed += 2;
+                else
+                    console.log("line 271 wrong answer reached");
+            }
+
+            if (question_2 === 15) {
+                if (answer_2 === '_b')
+                    _undefined++;
+                else if (answer_2 === '_a')
+                    imposed++;
+                else if (answer_2 === '_d')
+                    moratorium += 2;
+                else if (answer_2 === '_c')
+                    formed++;
+                else
+                    console.log("line 284 wrong answer reached");
+            }
+
+            if (question_2 === 16) {
+                if (answer_2 === '_d')
+                    _undefined += 2;
+                else if (answer_2 === '_a')
+                    imposed++;
+                else if (answer_2 === '_c')
+                    moratorium += 2;
+                else if (answer_2 === '_b')
+                    formed++;
+                else
+                    console.log("line 297 wrong answer reached");
+            }
+
+
+            if (question_2 === 17) {
+                if (answer_2 === '_c')
+                    _undefined++;
+                else if (answer_2 === '_a')
+                    imposed++;
+                else if (answer_2 === '_d')
+                    moratorium += 2;
+                else if (answer_2 === '_b')
+                    formed++;
+                else
+                    console.log("line 311 wrong answer reached");
+            }
+
+
+            if (question_2 === 18) {
+                if (answer_2 === '_c')
+                    _undefined++;
+                else if (answer_2 === '_b')
+                    imposed++;
+                else if (answer_2 === '_a')
+                    moratorium++;
+                else if (answer_2 === '_d')
+                    formed += 2;
+                else
+                    console.log("line 325 wrong answer reached");
+            }
+
+            if (question_2 === 19) {
+                if (answer_2 === '_a')
+                    _undefined++;
+                else if (answer_2 === '_c')
+                    imposed++;
+                else if (answer_2 === '_b')
+                    moratorium++;
+                else if (answer_2 === '_d')
+                    formed += 2;
+                else
+                    console.log("line 338 wrong answer reached");
+            }
+
         }
 
         if (step >= 40 && step < 80) {
@@ -86,11 +343,10 @@ window.onload = function () {
             //a: +=0
             //b: +=1
             //c: +=2
-            //kindness = 0, consciousness = 0, openness = 0, neuroticism = 0, extroversion = 0;
             let shit_happen = event.target.dataset.v;
 
             if (event.target.dataset.v === '_a') {
-
+                //+=0 every time so we don't actually need this if, but
 
             } else if (event.target.dataset.v === '_b') {
                 console.log("q_3 dataset expected: _b   dataset actual: ", event.target.dataset.v)
@@ -241,7 +497,7 @@ window.onload = function () {
                 labels: ['Навязанная', 'Мараторий', 'Сформированная', 'Неопределённая'],
                 datasets: [{
                     label: 'Статус профессиональный идентичности',
-                    data: [second_a, second_b, second_c, second_d],
+                    data: [imposed, moratorium, formed, _undefined],
                     backgroundColor: blue,
                     /*
                     borderColor: [
