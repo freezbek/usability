@@ -20,11 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="86475c41-534a-461a-a21f-0bfe935e4a7b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Quiz/js/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quiz/Key.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quiz/js/quiz_code.js" beforeDir="false" afterPath="$PROJECT_DIR$/Quiz/js/quiz_code.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quiz/js/quiz_key.js" beforeDir="false" afterPath="$PROJECT_DIR$/Quiz/js/quiz_key.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Quiz/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Quiz/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Quiz/js/quiz_key.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,6 +71,7 @@
       <workItem from="1604071967245" duration="19491000" />
       <workItem from="1604131617502" duration="4132000" />
       <workItem from="1604139360782" duration="68000" />
+      <workItem from="1604265339943" duration="1123000" />
     </task>
     <servers />
   </component>
