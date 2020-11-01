@@ -20,9 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="86475c41-534a-461a-a21f-0bfe935e4a7b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Quiz/js/quiz_key.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Quiz/js/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Quiz/Key.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Quiz/js/quiz_code.js" beforeDir="false" afterPath="$PROJECT_DIR$/Quiz/js/quiz_code.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Quiz/js/quiz_key.js" beforeDir="false" afterPath="$PROJECT_DIR$/Quiz/js/quiz_key.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,8 +34,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="package.json" />
         <option value="JavaScript File" />
+        <option value="package.json" />
       </list>
     </option>
   </component>
@@ -68,7 +70,9 @@
       <updated>1603991771851</updated>
       <workItem from="1603991777223" duration="11420000" />
       <workItem from="1604014496825" duration="936000" />
-      <workItem from="1604071967245" duration="19284000" />
+      <workItem from="1604071967245" duration="19491000" />
+      <workItem from="1604131617502" duration="4132000" />
+      <workItem from="1604139360782" duration="68000" />
     </task>
     <servers />
   </component>
@@ -85,15 +89,16 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1604003728474">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1604003728474" />
-    <state x="-1" y="0" width="1183" height="728" key="SettingsEditor" timestamp="1604003706529">
+    <state x="-1" y="0" width="1183" height="728" key="SettingsEditor" timestamp="1604139415112">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="-1" y="0" width="1183" height="728" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1604003706529" />
+    <state x="-1" y="0" width="1183" height="728" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1604139415112" />
   </component>
 </project>
