@@ -27,7 +27,7 @@ window.onload = function () {
     testName.innerText = 'Дистанционное тестирование по теме «Карьерный потенциал»';
 
     let result = {};
-    let step = 0;
+    let step = 100;
 
     function showQuestion(questionNumber) {
         document.querySelector('.question').innerHTML = quiz[step]['q'];
@@ -469,7 +469,7 @@ window.onload = function () {
             return result[a] > result[b] ? a : b
         });
 
-
+/*
         let div = document.createElement('div');
         div.classList.add('result');
         div.innerHTML = answers[key]['description'];
@@ -484,7 +484,7 @@ window.onload = function () {
         reloadButton.innerHTML = 'New quiz';
         reloadButton.classList.add('reload-button');
         document.querySelector('main').appendChild(reloadButton);
-
+*/
 
         //графики
 
