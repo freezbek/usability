@@ -19,26 +19,23 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="86475c41-534a-461a-a21f-0bfe935e4a7b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="88f802d9-babd-4b57-b817-9f47fe42b02b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Рабочий SMTP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Рабочий SMTP/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="JavaScript File" />
-        <option value="package.json" />
-      </list>
-    </option>
+  <component name="ComposerSettings">
+    <execution />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectId" id="1jYrGBUeDm0cMm4m5xnlSh1o4hy" />
+  <component name="ProjectId" id="1jjXZtBldAgQe8cVpghg0iXkSQf" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -46,30 +43,18 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../OpenServer/domains/logintest" />
     <property name="vue.rearranger.settings.migration" value="true" />
-  </component>
-  <component name="RunManager">
-    <configuration name="quiz_key.js" type="NodeJSConfigurationType" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/Quiz/js/quiz_key.js" working-dir="$PROJECT_DIR$/Quiz/js">
-      <method v="2" />
-    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="86475c41-534a-461a-a21f-0bfe935e4a7b" name="Default Changelist" comment="" />
-      <created>1603991771851</created>
+      <changelist id="88f802d9-babd-4b57-b817-9f47fe42b02b" name="Default Changelist" comment="" />
+      <created>1604318532171</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1603991771851</updated>
-      <workItem from="1603991777223" duration="11420000" />
-      <workItem from="1604014496825" duration="936000" />
-      <workItem from="1604071967245" duration="19491000" />
-      <workItem from="1604131617502" duration="4132000" />
-      <workItem from="1604139360782" duration="68000" />
-      <workItem from="1604265339943" duration="1804000" />
+      <updated>1604318532171</updated>
+      <workItem from="1604318533190" duration="1479000" />
     </task>
     <servers />
   </component>
@@ -86,16 +71,15 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1604003728474">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="667" y="163" key="#PHP" timestamp="1604320812600">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1604003728474" />
-    <state x="-1" y="0" width="1183" height="728" key="SettingsEditor" timestamp="1604139415112">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="667" y="163" key="#PHP/0.0.1920.1040@0.0.1920.1040" timestamp="1604320812600" />
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1604320895661">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="-1" y="0" width="1183" height="728" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1604139415112" />
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1604320895661" />
   </component>
 </project>
