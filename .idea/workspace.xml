@@ -20,18 +20,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="86475c41-534a-461a-a21f-0bfe935e4a7b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/canvas_mailer/mailer.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Quiz-1.0/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Quiz-1.0/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Рабочий SMTP/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Рабочий SMTP/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Рабочий SMTP/mail.php" beforeDir="false" afterPath="$PROJECT_DIR$/Рабочий SMTP/mail.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="package.json" />
+        <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -44,6 +52,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -70,6 +79,9 @@
       <workItem from="1604131617502" duration="4132000" />
       <workItem from="1604139360782" duration="68000" />
       <workItem from="1604265339943" duration="1804000" />
+      <workItem from="1604414290557" duration="15172000" />
+      <workItem from="1604508256354" duration="11212000" />
+      <workItem from="1604585583508" duration="1022000" />
     </task>
     <servers />
   </component>
@@ -89,13 +101,25 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="309" y="41" key="#Inspections" timestamp="1604430453803">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="309" y="41" key="#Inspections/0.0.1366.728@0.0.1366.728" timestamp="1604430453803" />
     <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1604003728474">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1604003728474" />
+    <state x="518" y="286" key="NewPhpFileDialog" timestamp="1604511923181">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="518" y="286" key="NewPhpFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1604511923181" />
     <state x="-1" y="0" width="1183" height="728" key="SettingsEditor" timestamp="1604139415112">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="-1" y="0" width="1183" height="728" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1604139415112" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1604511852535">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1604511852535" />
   </component>
 </project>
