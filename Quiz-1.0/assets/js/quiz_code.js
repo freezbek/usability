@@ -1,11 +1,12 @@
 window.onload = function () {
 
-
+    var metodic_options = document.getElementById("metodic_options")
     var testName = document.getElementsByTagName('h1');
     var testChapter = document.getElementsByTagName('h2');
     var question = document.getElementsByTagName('h3');
-
-
+    var elem = document.getElementById("#5_metodic");
+    //var button = document.getElementById("#button_id");
+    //button.classList.remove('displey_in');
     //chapter_2
     let _undefined = 0, imposed = 0, moratorium = 0, formed = 0;
 
@@ -25,6 +26,7 @@ window.onload = function () {
     question.innerText = '1. С кем или с чем Вы бы хотели работать? Какой объект деятельности Вас привлекает?';
     testName = testName[0];
     testName.innerText = 'Дистанционное тестирование по теме «Карьерный потенциал»';
+    metodic_options.textContent = test_chapter_options[1];
 
     let result = {};
     let step = 0;
@@ -57,14 +59,17 @@ window.onload = function () {
                 result[event.target.dataset.v] = 0;
             }
         }
-        
-
-        if (step >= 10 && step < 20) {
+            if (step === 9 ) {
             question.textContent = '2. Чем бы Вы хотели заниматься? Какой вид деятельности Вас привлекает?';
         }
+            if (step === 19) {testChapter.textContent = test_chapter_name[2];
+            question.textContent = ''; metodic_options.textContent = test_chapter_options[2];}
+            if (step ===39) {testChapter.textContent = test_chapter_name[3]; metodic_options.textContent = test_chapter_options[3];}
+            if (step ===79) {testChapter.textContent = test_chapter_name[4]; metodic_options.textContent = test_chapter_options[4];}
+            if (step ===100) {testChapter.textContent = test_chapter_name[5]; metodic_options.textContent = test_chapter_options[5];elem.style.height='1800px';}
+
+
         if (step >= 20 && step < 40) {
-            testChapter.textContent = test_chapter_name[2];
-            question.textContent = '';
             let question_2 = step - 20;
             let answer_2 = event.target.dataset.v;
 
@@ -338,7 +343,6 @@ window.onload = function () {
         }
 
         if (step >= 40 && step < 80) {
-            testChapter.textContent = test_chapter_name[3];
             var q_3 = step - 40;
             //a: +=0
             //b: +=1
@@ -386,7 +390,6 @@ window.onload = function () {
         }
 
         if (step >= 80 && step < 101) {
-            testChapter.textContent = test_chapter_name[4];
             //question.textContent = '';
             var question_4 = step - 80;
             if (event.target.dataset.v === '_a') {
@@ -457,9 +460,12 @@ window.onload = function () {
             document.querySelector('.answer').remove();
             testChapter.remove();
             testName.remove();
-            showResult();
+            showResult(); 
+            console.log(button);
+            button.classList.remove('displey_in');
         } else {
-            showQuestion();
+            return showQuestion();
+            
         }
 
     }

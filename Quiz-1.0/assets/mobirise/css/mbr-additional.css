@@ -1059,7 +1059,7 @@ a {
   }
 }
 .cid-sfaPsV1ssB {
-  background-image: url(images/10-layers.png);
+  background-image: url(images/18-layers.png);
 }
 .cid-sfaPup2H5v {
   padding-top: 6rem;
@@ -1102,9 +1102,10 @@ a {
   }
 }
 .cid-sfaPXLHJL3 {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
-  background-image: url(images/imgonline-com-ua-Resize-KGDCJ8531bgSUz.jpg);;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  /*background-image: url(images/imgonline-com-ua-Resize-KGDCJ8531bgSUz.jpg);*/
+  background-image: url(images/18-layers.png);
 }
 .cid-sfaPXLHJL3 .card-wrapper {
   border-radius: 4px;
@@ -1122,6 +1123,7 @@ a {
 @media (min-width: 992px) {
   .cid-sfaPXLHJL3 .card-wrapper {
     padding: 4rem;
+     overflow: hidden;
   }
 }
 .cid-sfaPXLHJL3 .mbr-text,

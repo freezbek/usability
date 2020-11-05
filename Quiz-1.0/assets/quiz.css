@@ -7,7 +7,7 @@
     margin: 0;
     border: 0;
     box-sizing: border-box;
-    position: relative;
+    /*position: relative;*/
 }
 a {
     text-decoration: none;
@@ -309,6 +309,7 @@ body {
 }
 .question {
     font-size: 20px;
+    height: 100px;
     font-weight: bold;
     margin: 20px 0;
 }
@@ -330,7 +331,7 @@ ul{
 .first_block_img{
   width: 50%;
   height: 100%;
-  background-image: url(../images/c.jpg);
+ 
   background-color: black;
 }
 .first_block li{
@@ -468,7 +469,7 @@ a .block-cover:hover {
 }
 /*----------------------------*/
 
-.ex5 h2:after {content: "";
+.ex5 h6:after {content: "";
 position: absolute;
 height: 3px;
 width: 50%;
@@ -557,5 +558,10 @@ right: 0;
   padding-top:20px;
 }
 
-
+.hidden{
+  overflow: inherit;
+  height: 500px;
+}
+.displey_in{display:none;
+}
 
