@@ -685,8 +685,7 @@ nav .mbr-section-btn {
 
 .card-wrapper {
   -webkit-flex: 1;
-
-    border-radius: 30px; 
+    border-radius: 15px; 
 }
 
 .carousel-control {
