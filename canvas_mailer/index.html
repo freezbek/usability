@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<br/><!-- Just so that JSFiddle's Result label doesn't overlap the Chart -->
+<!--
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+<div id="chartContainer" style="height: 360px; width: 100%;"></div>
+<a href="#" id="btn-download" download="chart.jpg" target="_blank">Get Base64 Image</a>
+-->
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<input type="button" value="Send Email" onclick="sendEmail()">
+<script>
+    function sendEmail() {
+        Email.send({
+            Host: "smtp.gmail.com",
+            Username: "temporatemail@gmail.com",
+            Password: "lizergino1",
+            To: 'enotka.egorka@gmail.com',
+            From: "temporatemail@gmail.com",
+            Subject: "This is the subject",
+            Body: "And this is the body"
+        }).then(
+            function (message)
+            {
+                alert("succsess");
+            }
+        );
+
+        
+    }
+</script>
+
+</body>
+</html>
