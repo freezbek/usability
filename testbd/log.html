@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/favicon.ico">
+
+    <title>zabezopasnost</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <style>
+        form {
+            background-color: #f9f9f9;
+            padding: 20px;
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <center>
+    <div class="row">
+        <div class="col-sm-4">
+            <form action="SendMail.php" method="POST">
+
+                <div class="form-group">
+                    <label for="">Введите ваш nickname</label>
+                    <input type="text" class="form-control" id="nickname_" name="nickname">
+
+                    <label for="">Введите субъект РФ в котором вы проживаете </label>
+                    <input type="text" class="form-control" id="subject_" name="subject">
+
+                    <label for="">Школа</label>
+                    <input type="text" class="form-control" id="school_" name="school">
+
+                    <label for="">Введите ваш email</label>
+                    <input type="text" class="form-control" id="email_" name="email">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Начать тестирование</button>
+            </form>
+        </div><!-- .col-sm-4 -->
+    </div> <!-- .row -->
+</center>
+</div><!-- /.container -->
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="quiz_code.js"></script>
+</body>
+</html>
+	
