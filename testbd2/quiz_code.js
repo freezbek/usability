@@ -23,7 +23,7 @@ console.log("хуй: "+answer_for_BD);
    'Февраля',
    'Марта',
    'Апреля',
-   'Майя',
+   'Мая',
    'Июня',
    'Июля',
    'Августа',
@@ -39,14 +39,7 @@ document.getElementById("input_m").value = Date_Manth;
 window.onload = function () {
 
 
-    var professional =0;
-    var financial =0;
-    var family =0;
-    var sociall =0;
-    var publicc =0;
-    var spiritual =0;
-    var physical=0;
-    var intellectual=0;
+
 
     var metodic_options = document.getElementById("metodic_options");
     var metodic_instructions = document.getElementById("metodic_instructions");
@@ -73,10 +66,13 @@ window.onload = function () {
     let kindness = 0, consciousness = 0, openness = 0,
         neuroticism = 0, extroversion = 0;
 
-
     //chapter_4
     let external = 0, educational = 0, social = 0, status = 0,
         pragmatical = 0, communicate = 0, self_professional = 0;
+    //chapter_5
+        let professional =0, financial =0, family =0, sociall =0, publicc =0, spiritual =0, physical=0, intellectual=0;
+
+
 
     testChapter = testChapter[0];
     testChapter.innerText = test_chapter_name[1];
@@ -622,7 +618,7 @@ window.onload = function () {
             document.getElementById("openness_").value = openness;
             document.getElementById("neuroticism_").value = neuroticism;
             document.getElementById("extroversion_").value = extroversion;
-_
+
             document.getElementById("self_professional_").value = self_professional;
             document.getElementById("communicate_").value = communicate;
             document.getElementById("pragmatical_").value = pragmatical;
@@ -639,7 +635,7 @@ _
             document.getElementById("spiritual_").value = spiritual;
             document.getElementById("physical_").value = physical;
             document.getElementById("intellectual_").value = intellectual;
-            /*Send_for_PHP(perem_for_BD);*/
+
             showResult(); 
         } else {
             return showQuestion();

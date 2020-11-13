@@ -84,7 +84,7 @@ class Image {
         }
 
         if( !$this->SetImgFormat($aFormat) ) {
-            JpGraphError::RaiseL(25081,$aFormat);//("JpGraph: Selected graphic format is either not supported or unknown [$aFormat]");
+            //JpGraphError::RaiseL(25081,$aFormat);//("JpGraph: Selected graphic format is either not supported or unknown [$aFormat]");
         }
         $this->ttf = new TTF();
         $this->langconv = new LanguageConv();

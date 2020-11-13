@@ -2,6 +2,9 @@
 include 'questions.php';
 require_once ('jpgraph/src/jpgraph.php');
 require_once ('jpgraph/src/jpgraph_line.php');
+require_once ('jpgraph/src/jpgraph_bar.php');
+require_once ('jpgraph/src/jpgraph_radar.php');
+//setlocale(LC_ALL, 'ru_RU.CP1251', 'rus_RUS.CP1251', 'Russian_Russia.1251');
 //$counter = 0;
 //if ($_POST['counter'] != null && $_POST['counter'] != 0)
 //    $counter = $_POST['counter'];
@@ -11,7 +14,7 @@ $questionDB = $question;
 
 //переменные для графиков
 //Вторая методика
- $_undefined=$_POST['second']; $imposed=$_POST['imposed']; $moratorium=$_POST['moratorium']; $formed=$_POST['formed'];
+ $_undefined=$_POST['_undefined']; $imposed=$_POST['imposed']; $moratorium=$_POST['moratorium']; $formed=$_POST['formed'];
 
 //Третья методика
 $kindness=$_POST['kindness']; $consciousness=$_POST['consciousness']; $openness=$_POST['openness']; $neuroticism=$_POST['neuroticism']; $extroversion=$_POST['extroversion'];
@@ -33,6 +36,13 @@ $perem_for_BD = $_POST['answer_for_BD'];
 
 $date_d = $_POST['Day'];
 $date_F = $_POST['Month'];
+
+
+
+
+$trimemail = str_replace(array('@','.'),'_', $email);// получение email с замененными точками и @
+
+
 if (!filter_var($email, FILTER_VALIDATE_EMAIL))
 
     echo "Введите правильно данные";
@@ -45,11 +55,23 @@ else {
 
 // Параметры для подключения
     $db_host = "localhost";
-    $db_user = "root"; // Логин БД
-    $db_password = "root"; // Пароль БД
-    $db_base = 'redbull'; // Имя БД
+    $db_user = "cb16725_zabez"; // Логин БД
+    $db_password = "9:^~&mm2!cVxUQ,[TX"; // Пароль БД
+    $db_base = 'cb16725_zabez'; // Имя БД
     $db_table = "results"; // Имя Таблицы БД
 
+/*
+careerpotentialtesting.ru
+IP:    92.53.123.166
+Хост:    vh316.timeweb.ru
+Логин:    cb16725
+пароль: v6Mkgv3L0diY
+Freezbe07.11.2020
+https://vh316.timeweb.ru/pma/?
+БД
+cb16725_zabez
+9:^~&mm2!cVxUQ,[TX
+*/
 // Подключение к базе данных
     $mysqli = new mysqli($db_host, $db_user, $db_password, $db_base);
 
@@ -79,7 +101,7 @@ if (mysqli_num_rows($res) > 0) {
     }
 
 //first insert to create primary key //
-    $result = $mysqli->query("INSERT INTO " . $db_table . " (nickname,subject,school,email) VALUES ('$nickname','$subject','$school','$email')");
+    $result = $mysqli->query("INSERT INTO " . $db_table . " (name,surname,city,email) VALUES ('$nickname','$subject','$school','$email')");
     if ($result == true) {
         //echo "Информация занесена в базу данных 1.0" . '<br>';
     } else {
@@ -139,38 +161,195 @@ if (mysqli_num_rows($res) > 0) {
         }
 
     }
+
+
+
     //-------------------------------------------------------------------------------
 
 
-$ydata = array("2.5", "2.7", "2.8", "3.0");
-$xdata = array("12:00", "12:05", "12:10", "12:15");
-
-$graph = new Graph(450,200,"auto");
-$graph->SetScale("textlin");
-$graph->SetMarginColor('white');
-$graph->SetFrame(true,'#B3BCCB', 1);
-$graph->SetTickDensity(TICKD_DENSE);
-$graph->img->SetMargin(50,20,20,60);
-$graph->title->SetMargin(10);
-$graph->xaxis->SetTickLabels($xdata);
-$graph->xaxis->SetLabelAngle(90);
-$graph->xaxis->SetPos('min');
-
-// Обычно значений много, не менее 250 в сутки,
-// поэтому нельзя выводить все значения из массива $xdata на шкалу X
-// Это будет сильным нагромождением, поэтому я вывожу каждое 30-е значение.
-$my_interval = ceil(1 / 30);
-$graph->xaxis->SetTextTickInterval($my_interval);
-
-$lineplot=new LinePlot($ydata);
-$graph->Add($lineplot);
-
- $img= "images/test.png";
-
- $graph->Stroke($img) ;
 
 
+//2 методика
 
+    $datay=array($_undefined, $imposed, $moratorium, $formed);
+// Create the graph. These two calls are always required
+    $graph = new Graph(1000,1000);
+    $graph->SetScale('textlin');
+// Add a drop shadow
+    $graph->SetShadow();
+// Adjust the margin a bit to make more room for titles
+    $graph->SetMargin(40,30,20,40);
+// Create a bar pot
+    $bplot = new BarPlot($datay);
+// Adjust fill color
+    $bplot->SetFillColor('orange');
+    $graph->Add($bplot);
+// Setup the titles
+    //$graph->title->Set('Metodic 2');
+    $graph->xaxis->SetTickLabels(array("Неопределённая","Навязанная","Мораторий","Сформированная"));
+    //$graph->xaxis->SetTickLabels(array("Unallocated","Imposed","Moratorium","Formed"));
+    $graph->title->SetFont(FF_FONT1,FS_BOLD);
+    $graph->yaxis->title->SetFont(FF_FONT1,FS_BOLD);
+    $graph->xaxis->title->SetFont(FF_FONT1,FS_BOLD);
+// Display the graph
+    $path= "images/"."method_2_".$trimemail.".png";
+    $graph->Stroke($path);
+
+
+
+ //=====================================
+
+
+
+    //3 методика
+    $datay=array($kindness ,$consciousness, $openness, $neuroticism, $extroversion);
+    $graph = new Graph(1000,1000);
+    $graph->SetScale('textlin');
+// Add a drop shadow
+    $graph->SetShadow();
+// Adjust the margin a bit to make more room for titles
+    $graph->SetMargin(40,30,20,40);
+// Create a bar pot
+    $bplot = new BarPlot($datay);
+// Adjust fill color
+    $bplot->SetFillColor('orange');
+    $graph->Add($bplot);
+// Setup the titles
+    //$graph->title->Set('Metodic 3');
+    $graph->xaxis->SetTickLabels(array("Доброжелательность","Сознательность","Открытость","Нейротизм","Экстраверсия"));
+    //$graph->xaxis->SetTickLabels(array("Goodwill","Consciousness","Openness","Neuroticism","Extraversion"));
+    $graph->title->SetFont(FF_FONT1,FS_BOLD);
+    $graph->yaxis->title->SetFont(FF_FONT1,FS_BOLD);
+    $graph->xaxis->title->SetFont(FF_FONT1,FS_BOLD);
+    $path= "images/"."method_3_".$trimemail.".png";
+// Display the graph
+    $graph->Stroke($path);
+
+
+
+
+
+
+
+
+//===============================================================
+    //4 методика
+
+
+    $datay=array($self_professional, $communicate, $pragmatical, $status, $socia, $educational, $external);
+    $graph = new Graph(1000,1000);
+    $graph->SetScale('textlin');
+// Add a drop shadow
+    $graph->SetShadow();
+// Adjust the margin a bit to make more room for titles
+    $graph->SetMargin(40,30,20,40);
+// Create a bar pot
+    $bplot = new BarPlot($datay);
+// Adjust fill color
+    $bplot->SetFillColor('orange');
+    $graph->Add($bplot);
+// Setup the titles
+    //$graph->title->Set('Metodic 4');
+    //$graph->xaxis->SetTickLabels(array("Professional","Communicative","Pragmatic","Status","Social","Training","External"));    
+    $graph->xaxis->SetTickLabels(array("Профессиональная","Коммуникативная","Прагматичная","Статусная","Социальная","Учебная","Внешняя"));
+
+    $graph->title->SetFont(FF_FONT1,FS_BOLD);
+    $graph->yaxis->title->SetFont(FF_FONT1,FS_BOLD);
+    $graph->xaxis->title->SetFont(FF_FONT1,FS_BOLD);
+    $path= "images/"."method_4_".$trimemail.".png";
+// Display the graph
+    $graph->Stroke($path);
+//==========================================================================
+    //5 методика
+
+$datay=array($professional, $financial, $family, $sociall, $publicc, $spiritual, $physical, $intellectual);
+        $radar = new RadarGraph(1000,1000);
+$radar->SetScale('lin',0,50);
+$radar->yscale->ticks->Set(25,5);
+$radar->SetColor('white');
+$radar->SetShadow();
+
+$radar->SetCenter(0.5,0.55);
+
+$radar->axis->SetFont(FF_FONT1,FS_BOLD);
+$radar->axis->SetWeight(2);
+
+// Uncomment the following lines to also show grid lines.
+$radar->grid->SetLineStyle('dashed');
+$radar->grid->SetColor('navy@0.5');
+$radar->grid->Show();
+/*
+$graph = new PieGraph(500,400,'auto');
+$graph->title->SetFont(FF_VERDANA,FS_BOLD,16);
+
+jpg-config.inc:
+
+DEFINE('LANGUAGE_CYRILLIC',true);
+DEFINE('DEFAULT_GFORMAT','auto');
+возможно еще придеться указать путь к шрифтам (мне не понадобилось)
+DEFINE('TTF_DIR',$_SERVER['SystemRoot'].'/fonts/');
+*/
+
+$radar->ShowMinorTickMarks();
+//$radar->title->Set('Metodic 5');
+$radar->title->SetFont(FF_FONT1,FS_BOLD);
+//$radar->SetTitles(array("Профессиональные","Финансовые","Семейные","Социальные","Общественные","Духовные","Физические","Интеллектуальные"));
+$radar->SetTitles(array("Professional","Financial","Family","Social","Public","Spiritual","Physical","Intellectual"));
+$plot = new RadarPlot($datay);
+$plot->SetLegend('Goal');
+$plot->SetColor('red','lightred');
+$plot->SetFillColor('lightblue');
+$plot->SetLineWeight(2);
+
+$radar->Add($plot);
+$path= "images/"."method_5_".$trimemail.".png";
+$radar->Stroke($path);
+
+
+/*
+    $datay  =array($professional, $financial, $family, $sociall, $publicc, $spiritual, $physical, $intellectual);
+
+
+        
+// Create the basic rtadar graph
+    $graph5 = new RadarGraph(500,500);
+
+// Set background color and shadow
+    $graph5->SetColor("white");
+    $graph5->SetShadow();
+
+// Position the graph
+    $graph5->SetCenter(0.4,0.55);
+
+// Setup the axis formatting
+    $graph5->axis->SetFont(FF_FONT1,FS_BOLD);
+    $graph5->axis->SetWeight(2);
+
+// Setup the grid lines
+    $graph5->grid->SetLineStyle("longdashed");
+    $graph5->grid->SetColor("navy");
+    $graph5->grid->Show();
+    $graph5->HideTickMarks();
+
+// Setup graph titles
+    $graph5->title->Set(iconv('windows-1251','UTF-8','5. Методика'));
+    $graph5->title->SetFont(FF_FONT1,FS_BOLD);
+    $graph5->yaxis->title->SetFont(FF_FONT1, FS_BOLD);
+    $graph5->xaxis->title->SetFont(FF_FONT1, FS_BOLD);
+    $graph5->SetTitles(array("Профессиональные","Финансовые","Семейные","Социальные","Общественные","Духовные","Физичекие","Интеллектуальные"));
+// Create the first radar plot
+   // $professional=$_POST['professional']; $financial=$_POST['financial']; $family=$_POST['family']; $sociall=$_POST['sociall']; $publicc=$_POST['publicc']; $spiritual=$_POST['spiritual']; $physical=$_POST['physical']; $intellectual=$_POST['intellectual'];
+    $plot5 = new RadarPlot($datay);
+    $plot5->SetLegend("Goal");
+    $plot5->SetColor("red","lightred");
+    $plot5->SetFill(false);
+    $plot5->SetLineWeight(2);
+// Add the plots to the graph
+    $graph5->Add($plot5);
+// And output the graph
+    $path= "images/"."method_5_".$trimemail.".png";
+    $graph5->Stroke($path) ;
+*/
 
 //================================================
 require_once('phpmailer/PHPMailerAutoload.php');
@@ -184,27 +363,37 @@ else {
     $mail->isSMTP(); // Set mailer to use SMTP
     $mail->Host = 'smtp.mail.ru'; // Specify main and backup SMTP servers
     $mail->SMTPAuth = true; // Enable SMTP authentication
-    $mail->Username = 'toxa699@mail.ru'; // Ваш логин от почты с которой будут отправляться письма
-    $mail->Password = '55561999275556y'; // Ваш пароль от почты с которой будут отправляться письма
+    $mail->Username = 'careerpotentialtesting@mail.ru'; // Ваш логин от почты с которой будут отправляться письма
+    $mail->Password = 'bA5i_2hhZpOA'; // Ваш пароль от почты с которой будут отправляться письма
     $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
     $mail->Port = 465; // TCP port to connect to / этот порт может отличаться у других провайдеров
 
-    $mail->setFrom('toxa699@mail.ru'); // от кого будет уходить письмо?
+    $mail->setFrom('careerpotentialtesting@mail.ru'); // от кого будет уходить письмо?
     $mail->addAddress($email); // Кому будет уходить письмо
     $mail->isHTML(true); // Set email format to HTML
-    $mail->Subject = 'Заявка с тестового сайта';
+    $mail->Subject = 'Онлайн тестирование "Карьерный потенциал"';
     //$mail->Body = '' . 'user nickname: ' . $nickname . '<br>User email: ' . $email;
 
 
-    $mail->AddEmbeddedImage('images/test.png','test');
-    $mail->Body = '
+    $mail->AddEmbeddedImage('images/method_2_'.$trimemail.'.png','method_2_');
+    $mail->AddEmbeddedImage('images/method_3_'.$trimemail.'.png','method_3_');
+    $mail->AddEmbeddedImage('images/method_4_'.$trimemail.'.png','method_4_');
+    $mail->AddEmbeddedImage('images/method_5_'.$trimemail.'.png','method_5_');
+    /*
+    $mail->AddEmbeddedImage('images/method_3_'.$trimemail,'method_3_');
+    $mail->AddEmbeddedImage('images/method_4_'.$trimemail,'method_4_');
+    $mail->AddEmbeddedImage('images/method_5_'.$trimemail,'method_5_');
+    */
+    $mail->Body =
+        '
     <h1 style="text-align: center;">«Карьерный потенциал»</h1>
 
     <h2>Результаты тестирования</h2>
 
     <p>
-    Дата тестирования <u>«День» Месяц 2020 год</u><br>
-    ФИО:<u>ФамилияИмя</u><br>
+    Дата тестирования <u>«'.$date_d.'» '.$date_F.' 2020 год</u><br>
+    ФИО: <u>'.$nickname.' '.$subject.'</u><br>
+    Электронная почта: <u>'.$email.'</u><br>
     Перед вами результаты тестирования «Карьерный потенциал» <br>
     Тестирование проводилось по 5 методикам, которые были разработаны и апробированы авторами ведущих
     профориентационных программ для подростков.<br><br>
@@ -213,7 +402,9 @@ else {
     приглашаем вас на индивидуальную онлайн-консультацию, в ходе которой можно обсудить и уточнить результаты
     теста, получить рекомендации, как можно учесть результаты тестирования в своей личной образовательной и
     профессиональной траектории<br><br>
-    <i>Для записи на индивидуальную онлайн-консультацию вам необходимо ......</i><br><br>
+    Для записи на индивидуальную онлайн-консультацию Вам необходимо отправить заявку на электронную почту info@zabezopasnost.com<br>
+    В письме - заявке необходимо указать тему «Онлайн-консультация по диагностике «Карьерный потенциал», Ваше имя, телефон и предпочтительное время консультации. Также необходимо прикрепить файл с результатами диагностики.<br>
+    Если у Вас возникли вопросы, звоните или пишите на WhatsApp по телефону: +7 (985) 998 49 81.<br><br>
     </p>
 
     <p>
@@ -247,7 +438,8 @@ else {
     самоопределения: неопределенная профессиональная идентичность, навязанная профессиональная идентичность,
     мораторий (кризис выбора) профессиональной идентичности, сформированная профессиональная идентичность.<br><br>
     <i>Тестирование показало следующий характер Вашей профессиональной идентичности в настоящий период:</i><br><br>
-    <img src= "cid:test" /><br>
+    <center>Статус профессиональной идентичности</center><br>
+    <center><img src= "cid:method_2_" /></center><br>
     Чем выше сумма баллов, набранная по каждому из статусов, тем в большей степени суждения о нем применимы
     к Вам.<br>
     <b><i>Неопределенное состояние профессиональной идентичности</i></b><br>
@@ -334,7 +526,8 @@ else {
     13 – 16 – высокий уровень выраженности;<br><br>
     На графике представлены Ваши показатели<br><br>
     </i>
-    <img src= "cid:test" />
+    <center>Характеристики личности</center><br>
+    <center><img src= "cid:method_3_" /></center><br>
     </p>
 
     <p>
@@ -351,7 +544,8 @@ else {
     относительно доминирующую, но не ярко выраженную мотивацию. Если какой-то тип мотивации получает 3-4 балла, то
     он совершенно Вам не свойственен.<br><br>
     <i>На графике представлены Ваши показатели</i><br><br>
-    <img src= "cid:test" /><br><br>
+    <center>Типы мотивации выбора профессии</center><br>
+    <center><img src= "cid:method_4_" /></center><br><br>
     <b>Профессиональная мотивация</b> возникает только тогда, когда уже сложились интеллектуальные задатки к
     какому-либо виду профессиональной деятельности. Ее наличие может свидетельствовать о том, что идет формирование
     профессиональных способностей. При доминировании профессиональной мотивации подросток проявляет
@@ -387,7 +581,8 @@ else {
     и, возможно, для дальнейшей работы над собой.<br>
     Чем выше итоговое количество баллов в обозначенном секторе, тем большую ценность представляет для Вас
     соответствующий ориентир.<br><br>
-    <img src= "cid:test" /><br><br>
+    <center>Социальные ценности личности</center><br>
+    <center><img src= "cid:method_5_" /></center><br><br>
     </p>';
 
 
@@ -398,7 +593,7 @@ else {
     //$mail->AltBody = '';
     try {
         $mail->send();
-        header('location: thank-you.html');
+        
     } catch (phpmailerException $e) {
     }
 }
@@ -461,8 +656,8 @@ else {
         <p></p>
         <center><h1 class="mbr-section-title mbr-fonts-style mbr-white mb-3 display-1" ><strong>Спасибо за прохождение тестирования</strong></h1></center>
         <center><h2 class="mbr-section-title mbr-fonts-style mbr-white mb-3 display-1" ><strong>Результаты тестирования придут на вашу почту в течении трёх дней.</strong></h2></center>
-        <h3>По всем вопросам обращаться по электронному адресу - info@zabezopasnost.com<br>
-        либо по телефону - +7985-998-49-81</h3>
+        <h3>По всем вопросам обращаться по электронному адресу - <u>info@zabezopasnost.com</u><br>
+            либо по телефону - <u>+7985-998-49-81</u></h3>
     </div> 
 </section>
         <div>
