@@ -39,8 +39,6 @@ document.getElementById("input_m").value = Date_Manth;
 window.onload = function () {
 
 
-
-
     var metodic_options = document.getElementById("metodic_options");
     var metodic_instructions = document.getElementById("metodic_instructions");
     var testName = document.getElementsByTagName('h1');
@@ -59,6 +57,10 @@ window.onload = function () {
     document.getElementById("imput_d").value = date_d;
 
     let perem_for_BD = "";
+    //chapter_1.1
+    let chapter_1_1_y="";
+    //chapter_1.2
+    let chapter_1_2_y=""; 
     //chapter_2
     let _undefined = 0, imposed = 0, moratorium = 0, formed = 0;
 
@@ -170,7 +172,16 @@ window.onload = function () {
 
                     //first_text_block.style.display = "none";
                 }
-
+        if(step >=0 && step<10)
+        {
+            if(answer_for_BD==='_a'){chapter_1_1_y+='1';}
+            if(answer_for_BD==='_b'){chapter_1_1_y+='2';}
+        }
+        if (step>=10 && step<20) 
+        {
+            if(answer_for_BD==='_a'){chapter_1_2_y+='1';}
+            if(answer_for_BD==='_b'){chapter_1_2_y+='2';}
+        }
         if (step >= 20 && step < 40) {
             let question_2 = step - 20;
             let answer_2 = event.target.dataset.v;
@@ -607,6 +618,10 @@ window.onload = function () {
             testName.remove();
 
             document.getElementById("input_for_bd").value = perem_for_BD;
+            console.log(chapter_1_1_y);
+            console.log(chapter_1_2_y);
+            document.getElementById("imput_chaptet_1_1_y").value = chapter_1_1_y;
+            document.getElementById("imput_chaptet_1_2_y").value = chapter_1_2_y;
 
             document.getElementById("_undefined_").value = _undefined;
             document.getElementById("imposed_").value = imposed;

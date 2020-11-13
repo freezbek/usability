@@ -84,7 +84,7 @@ class Image {
         }
 
         if( !$this->SetImgFormat($aFormat) ) {
-            //JpGraphError::RaiseL(25081,$aFormat);//("JpGraph: Selected graphic format is either not supported or unknown [$aFormat]");
+            JpGraphError::RaiseL(25081,$aFormat);//("JpGraph: Selected graphic format is either not supported or unknown [$aFormat]");
         }
         $this->ttf = new TTF();
         $this->langconv = new LanguageConv();
@@ -108,7 +108,7 @@ class Image {
             imageantialias($this->img,$aFlg);
         }
         else {
-            JpGraphError::RaiseL(25128);//('The function imageantialias() is not available in your PHP installation. Use the GD version that comes with PHP and not the standalone version.')
+            //JpGraphError::RaiseL(25128);//('The function imageantialias() is not available in your PHP installation. Use the GD version that comes with PHP and not the standalone version.')
         }
     }
 

@@ -13,6 +13,8 @@ $questionDB = $question;
 //if ($counter == 0) {
 
 //переменные для графиков
+//Первая методика
+$chaptet_1_1_y=$_POST['chaptet_1_1_y'];$chaptet_1_2_y=$_POST['chaptet_1_2_y'];
 //Вторая методика
  $_undefined=$_POST['_undefined']; $imposed=$_POST['imposed']; $moratorium=$_POST['moratorium']; $formed=$_POST['formed'];
 
@@ -37,7 +39,32 @@ $perem_for_BD = $_POST['answer_for_BD'];
 $date_d = $_POST['Day'];
 $date_F = $_POST['Month'];
 
+     $color = array();
+    for ($i=0; $i <=99 ; $i++) { 
+        $color[$i]="white";
+        //echo $i."эллемент=".$color[$i].'<br>';
+    }
+    //echo "-------------------------------------.'<br>'";
+    for ($i=0; $i <=9 ; $i++) {
+   // echo $i.'<br>'; 
+        if ($chaptet_1_1_y[$i] == "1") {
 
+            for ($j=0; $j <=9 ; $j++) { 
+            if ($chaptet_1_1_y[$j]=="1") {
+                if ($i==0) {
+                 $color[$j]="lime";
+                }
+                else
+                {
+                $sum="$i"+"$j";
+                $color[$i.$j]="lime";
+        //echo $i.$j."сумма=".$sum.'<br>';
+        //echo $i.$j."эллемент=". $color[$i.$j].'<br>';
+                }
+            }
+        }
+        }
+    }
 
 
 $trimemail = str_replace(array('@','.'),'_', $email);// получение email с замененными точками и @
@@ -351,6 +378,7 @@ $radar->Stroke($path);
     $graph5->Stroke($path) ;
 */
 
+
 //================================================
 require_once('phpmailer/PHPMailerAutoload.php');
 $mail = new PHPMailer;
@@ -422,8 +450,181 @@ else {
     <b>Анализ</b> производится с помощью нижеследующей таблицы («Матрица выбора профессии»). Профессии, находящиеся
     на пересечении «сферы труда» и «вида труда», являются (предположительно) наиболее близкими Вашим интересам и
     склонностям.<br><br>
-    <center><strong><h3>1. Методика «Матрица выбора профессии»</h3></strong></center><br><br>
-    </p>
+    <center><strong><h3>Матрица выбора профессии</h3></strong></center><br><br>
+
+   <style>    
+table {
+font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+font-size: 12px;
+border-collapse: collapse;
+text-align: center;
+}
+th, td:first-child {
+background: #AFCDE7;
+color: white;
+padding: 10px 20px;
+}
+th, td {
+border-style: solid;
+border-width: 0 1px 1px 0;
+border-color: black;
+}
+td {
+background: #b0c4de;
+}
+th:first-child, td:first-child {
+text-align: left;
+}
+ </style>
+
+<center>
+<table id="table">
+<tr class="x_0">
+        <td style="background-color:;">Виды труда</td>
+        <td style="background-color:;">Человек</td>
+        <td style="background-color:;">Информация</td>
+        <td style="background-color:;">Финансы</td>
+        <td style="background-color:;">Техника</td>
+        <td style="background-color:;">Искусство</td>
+        <td style="background-color:;">Животные</td>
+        <td style="background-color:;">Растения</td>
+        <td style="background-color:;">Продукты</td>
+        <td style="background-color:;">Изделия</td>
+        <td style="background-color:;">Природные ресурсы</td>
+    </tr>
+    <tr class="x_1">
+        <td style="background-color:;">Управление (руководство чьей-то деятель-ностью)</td>
+        <td style="background-color:'.$color[0].';">Менеджер по персоналу Администратор</td>
+        <td style="background-color:'.$color[1].';">Маркетолог Диспетчер Статистик</td>
+        <td style="background-color:'.$color[2].';">Экономист Аудитор Аналитик</td>
+        <td style="background-color:'.$color[3].';">Технолог Авиадиспетчер Инженер</td>
+        <td style="background-color:'.$color[4].';">Режиссер Продюсер Дирижер</td>
+        <td style="background-color:'.$color[5].';">Кинолог Зоотехник Генный инженер</td>
+        <td style="background-color:'.$color[6].';">Агроном Фермер Селекционер</td>
+        <td style="background-color:'.$color[7].';">Товаровед Менеджер по продажам</td>
+        <td style="background-color:'.$color[8].';">Менеджер по продажам Логистик Товаровед</td>
+        <td style="background-color:'.$color[9].';">Энергетик Инженер по кадастру</td>
+    </tr>
+    <tr class="x_2">
+        <td style="background-color:;">Обслуживание (удовлетво-рение чьих-то потребностей)</td>
+        <td style="background-color:'.$color[10].';">Продавец Парикмахер Официант</td>
+        <td style="background-color:'.$color[11].';">Переводчик Экскурсовод Библиотекарь</td>
+        <td style="background-color:'.$color[12].';">Бухгалтер Кассир Инкассатор</td>
+        <td style="background-color:'.$color[13].';">Водитель Слесарь Теле-радио-мастер</td>
+        <td style="background-color:'.$color[14].';">Гример Костюмер Парик-махер</td>
+        <td style="background-color:'.$color[15].';">Животновод Птицевод Скотовод</td>
+        <td style="background-color:'.$color[16].';">Овощевод Полевод Садовод</td>
+        <td style="background-color:'.$color[17].';">Экспедитор Упаковщик Продавец</td>
+        <td style="background-color:'.$color[18].';">Продавец Упаковщик Экспедитор</td>
+        <td style="background-color:'.$color[19].';">Егерь Лесник Мелиоратор</td>
+    </tr>
+    <tr class="x_3">
+        <td style="background-color:;">Образование (воспитание и обучение, формирование личности)</td>
+        <td style="background-color:'.$color[20].';">Учитель Воспитатель Социальный педагог</td>
+        <td style="background-color:'.$color[21].';">Преподаватель Ведущий теле- и радио программ</td>
+        <td style="background-color:'.$color[22].';">Консультант Препода-ватель экономики</td>
+        <td style="background-color:'.$color[23].';">Мастер производ-ственного обучения</td>
+        <td style="background-color:'.$color[24].';">Хореограф Препода-ватель музыки, живописи</td>
+        <td style="background-color:'.$color[25].';">Дрессировщик Кинолог Жокей</td>
+        <td style="background-color:'.$color[26].';">Преподаватель биологии Эколог</td>
+        <td style="background-color:'.$color[27].';">Мастер производ-ственного обучения</td>
+        <td style="background-color:'.$color[28].';">Мастер производ-ственного обучения</td>
+        <td style="background-color:'.$color[29].';">Преподаватель Эколог</td>
+    </tr>
+    <tr class="x_4">
+        <td style="background-color:;">Оздоровление (избавление от болезней и их преду преждение)</td>
+        <td style="background-color:'.$color[30].';">Врач Медсестра Тренер</td>
+        <td style="background-color:'.$color[31].';">Рентгенолог Врач (компьютерная диагностика)</td>
+        <td style="background-color:'.$color[32].';">Антикризисный управляющий Страховой агент</td>
+        <td style="background-color:'.$color[33].';">Мастер авто сервиса Физиотерапевт</td>
+        <td style="background-color:'.$color[34].';">Пластический хирург Косметолог Реставратор</td>
+        <td style="background-color:'.$color[35].';">Ветеринар Лаборант питомника Зоопсихолог</td>
+        <td style="background-color:'.$color[36].';">Фитотерапевт Гомеопат Травник</td>
+        <td style="background-color:'.$color[37].';">Диетолог Косметолог Санитарный инспектор</td>
+        <td style="background-color:'.$color[38].';">Фармацевт Ортопед Протезист</td>
+        <td style="background-color:'.$color[39].';">Бальнеолог Эпидемиолог Лаборант</td>
+    </tr>
+    <tr class="x_5">
+        <td style="background-color:;">Творчество (создание оригинальных произведений искусства)</td>
+        <td style="background-color:'.$color[40].';">Режиссер Артист Музыкант</td>
+        <td style="background-color:'.$color[41].';">Программист Редактор Web-дизайнер</td>
+        <td style="background-color:'.$color[42].';">Менеджер по проектам Продюсер</td>
+        <td style="background-color:'.$color[43].';">Коструктор Дизайнер Художник</td>
+        <td style="background-color:'.$color[44].';">Художник Писатель Композитор</td>
+        <td style="background-color:'.$color[45].';">Дрессировщик Служитель цирка</td>
+        <td style="background-color:'.$color[46].';">Фитодизайнер Озеле-нитель Флорист</td>
+        <td style="background-color:'.$color[47].';">Кондитер Повар Кулинар</td>
+        <td style="background-color:'.$color[48].';">Резчик по дереву Витражист Скульптор</td>
+        <td style="background-color:'.$color[49].';">Архитектор Мастерцветово Декоратор</td>
+    </tr>
+    <tr class="x_6">
+        <td style="background-color:;">Производство (изготовление продукции)</td>
+        <td style="background-color:'.$color[50].';">Мастер производственного обучения</td>
+        <td style="background-color:'.$color[51].';">Корректор Журналист Полиграфист</td>
+        <td style="background-color:'.$color[52].';">Экономист Бухгалтер Кассир</td>
+        <td style="background-color:'.$color[53].';">Станочник Аппаратчик Машинист</td>
+        <td style="background-color:'.$color[54].';">Ювелир График Керамист</td>
+        <td style="background-color:'.$color[55].';">Животновод Птицевод Рыбовод</td>
+        <td style="background-color:'.$color[56].';">Овощевод Цветовод Садовод</td>
+        <td style="background-color:'.$color[57].';">Технолог Калькулятор Повар</td>
+        <td style="background-color:'.$color[58].';">Швея Кузнец Столяр</td>
+        <td style="background-color:'.$color[59].';">Шахтер Нефтяник Техник</td>
+    </tr>
+    <tr class="x_7">
+        <td style="background-color:;">Констру-ирование (проекти-рование деталей и объектов)</td>
+        <td style="background-color:'.$color[60].';">Стилист Пластический хирург</td>
+        <td style="background-color:'.$color[61].';">Картограф Программист Web-мастер</td>
+        <td style="background-color:'.$color[62].';">Плановик Менеджер по проектам</td>
+        <td style="background-color:'.$color[63].';">Инженер-конструктор Телемастер</td>
+        <td style="background-color:'.$color[64].';">Архитектор Дизайнер Режиссер</td>
+        <td style="background-color:'.$color[65].';">Генный инженер Виварщик Селекционер</td>
+        <td style="background-color:'.$color[66].';">Селекционер Ландшафтист Флорист</td>
+        <td style="background-color:'.$color[67].';">Инженер-технолог Кулинар</td>
+        <td style="background-color:'.$color[68].';">Модельер Закройщик Обувщик</td>
+        <td style="background-color:'.$color[69].';">Дизайнер ландшафта Инженер</td>
+    </tr>
+    <tr class="x_8">
+        <td style="background-color:;">Исследование (научное изучение чего-либо или кого-либо)</td>
+        <td style="background-color:'.$color[70].';">Психолог Следователь Лаборант</td>
+        <td style="background-color:'.$color[71].';">Социолог Математик Аналитик</td>
+        <td style="background-color:'.$color[72].';">Аудитор Экономист Аналитик</td>
+        <td style="background-color:'.$color[73].';">Испытатель (техники) Хроно-метражист</td>
+        <td style="background-color:'.$color[74].';">Искус-ствовед Критик Журналист</td>
+        <td style="background-color:'.$color[75].';">Зоопсихолог Орнитолог Ихтиолог</td>
+        <td style="background-color:'.$color[76].';">Биолог Ботаник Микро-биолог</td>
+        <td style="background-color:'.$color[77].';">Лаборант Дегустатор Санитарный врач</td>
+        <td style="background-color:'.$color[78].';">Эргономик Контролер Лаборант</td>
+        <td style="background-color:'.$color[79].';">Биолог Метеоролог Агроном</td>
+    </tr>
+    <tr class="x_9">
+        <td style="background-color:;">Защита (охрана от враждебных действий)</td>
+        <td style="background-color:'.$color[80].';">Милиционер Военный Адвокат</td>
+        <td style="background-color:'.$color[81].';">Арбитр Юрист Патентовед</td>
+        <td style="background-color:'.$color[82].';">Инкассатор Охранник Страховой агент</td>
+        <td style="background-color:'.$color[83].';">Пожарный Сапер Инженер</td>
+        <td style="background-color:'.$color[84].';">Постановщик трюков Каскадер</td>
+        <td style="background-color:'.$color[85].';">Егерь Лесничий Инспектор рыбнадзора</td>
+        <td style="background-color:'.$color[86].';">Эколог Микро-биолог Миколог</td>
+        <td style="background-color:'.$color[87].';">Санитарный врач Лаборант Микро-биолог</td>
+        <td style="background-color:'.$color[88].';">Сторож Инспектор</td>
+        <td style="background-color:'.$color[89].';">Охрана ресурсов Инженер по ТБ</td>
+    </tr>
+    <tr class="x_10">
+        <td style="background-color:;">Контроль (проверка и наблюдение)</td>
+        <td style="background-color:'.$color[90].';">Тамо-женник Прокурор Табельщик</td>
+        <td style="background-color:'.$color[91].';">Корректор Системный программист</td>
+        <td style="background-color:'.$color[92].';">Ревизор Налоговый полицей-ский</td>
+        <td style="background-color:'.$color[93].';">Техник-контролер Обходчик ЖД</td>
+        <td style="background-color:'.$color[94].';">Выпускающий редактор Консультант</td>
+        <td style="background-color:'.$color[95].';">Консультант Эксперт по экстерьеру</td>
+        <td style="background-color:'.$color[96].';">Селекционер Агроном Лаборант</td>
+        <td style="background-color:'.$color[97].';">Дегустатор лаборант Санитарный врач</td>
+        <td style="background-color:'.$color[98].';">Оценщик Контролер ОТК Приемщик</td>
+        <td style="background-color:'.$color[99].';">Радиолог Почвовед Эксперт</td>
+    </tr>   
+</table>
+</center>
+</p>
 
     <p>
     <center><strong><h3>2. Методика изучения статусов профессиональной идентичности (А.А. Абзель)</h3></strong></center><br><br>
@@ -587,10 +788,6 @@ else {
 
 
 
-
-
-
-    //$mail->AltBody = '';
     try {
         $mail->send();
         
